@@ -1,11 +1,13 @@
 #pragma once
 #include <Windows.h>
 #include "API\ARK\Ark.h"
-bool PlayerKillsEnabled, DinoKillsEnabled, DisplayInChatbox, DisplaySameTribeKills, DisplayDistance;
+#include "Requests.h"
+
+bool PlayerKillsEnabled, DinoKillsEnabled, DisplayInChatbox, DisplaySameTribeKills, DisplayDistance, UseDiscordWebhook;
 int DisplayType;
 float DisplayScale, DisplayDelay;
 FLinearColor DisplayColour;
-FString ServerName;
+FString ServerName, DiscordWebhookURL;
 std::wstring Messages[8];
 
 const float trunc_decs(const float& f, int decs)

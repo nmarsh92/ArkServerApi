@@ -1,6 +1,6 @@
 #pragma once
 #include <fstream>
-#include "json.hpp"
+#include "nlohmann/json.hpp"
 
 void InitConfig()
 {
@@ -27,7 +27,8 @@ void InitConfig()
 	DisplayColour = FLinearColor(TempConfig[0], TempConfig[1], TempConfig[2], TempConfig[3]);
 	DisplayDistance = TeleportConfig["KillFeed"]["DisplayDistance"];
 	DisplayInChatbox = TeleportConfig["KillFeed"]["DisplayInChatbox"];
-
+	UseDiscordWebhook = TeleportConfig["KillFeed"]["UseDiscordWebhook"];
+	DiscordWebhookURL = FString(ArkApi::Tools::Utf8Decode(TeleportConfig["KillFeed"]["DiscordWebhookURL"]).c_str());
 	TempConfig = TeleportConfig["KillFeed"]["Messages"];
 	int j = 0;
 	std::string Data;
