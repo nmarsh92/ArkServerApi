@@ -16,6 +16,9 @@
     <Filter Include="Header Files\Includes">
       <UniqueIdentifier>{b2d46d29-29b4-427c-ae32-c7fcea11cd37}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Database">
+      <UniqueIdentifier>{5ec31f47-ceac-4e68-8246-fbcd0809da40}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="KillFeed.cpp">
@@ -38,5 +41,19 @@
     <ClInclude Include="json.hpp">
       <Filter>Header Files\Includes</Filter>
     </ClInclude>
+    <ClInclude Include="Database\DB.h">
+      <Filter>Header Files\Database</Filter>
+    </ClInclude>
+    <ClInclude Include="Database\IDatabase.h">
+      <Filter>Header Files\Database</Filter>
+    </ClInclude>
+    <ClInclude Include="Database\MysqlDB.h">
+      <Filter>Header Files\Database</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="KillFeed.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>

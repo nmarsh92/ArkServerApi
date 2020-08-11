@@ -2,6 +2,7 @@
 DECLARE_HOOK(APrimalDinoCharacter_Die, bool, APrimalDinoCharacter*, float, FDamageEvent*, AController*, AActor*);
 DECLARE_HOOK(AShooterCharacter_Die, bool, AShooterCharacter*, float, FDamageEvent*, AController*, AActor*);
 
+
 void InitHooks()
 {
 	if (DinoKillsEnabled) ArkApi::GetHooks().SetHook("APrimalDinoCharacter.Die", &Hook_APrimalDinoCharacter_Die, reinterpret_cast<LPVOID*>(&APrimalDinoCharacter_Die_original));
@@ -82,7 +83,7 @@ void NotifyDeath(const FString& KillerName, const FString& KillerTribe, const FS
 }
 
 void LogDeath(AShooterCharacter* _this, float KillingDamage, FDamageEvent* DamageEvent, AController* Killer, AActor* DamageCauser) {
-
+	
 }
 
 void RequestCallback(bool success, std::string response)
@@ -152,6 +153,14 @@ bool _cdecl Hook_AShooterCharacter_Die(AShooterCharacter* _this, float KillingDa
 			if (UseDiscordWebhook) {
 				PostToDiscord(ArkApi::GetApiUtils().GetCharacterName(KillerShooterController), KillerShooterController->GetPlayerCharacter()->TribeNameField(), KillerDinoName, _this->PlayerNameField(), _this->TribeNameField(), WeaponName, WeaponIcon, Distance, true);
 			}
+			
+			//possible code to get location, would need to add params for location webhook etc
+	/*		FVector* groundLocation;
+			FVector* offsetUp;
+			FVector* offsetDown;
+			if (KillerShooterController->GetPlayerCharacter()->GetGroundLocation(groundLocation, offsetUp, offsetDown)) 
+			{
+			};*/
 
 		}
 	}

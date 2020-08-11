@@ -2,6 +2,8 @@
 #include <Windows.h>
 #include "API\ARK\Ark.h"
 #include "Requests.h"
+#include "Database/MysqlDB.h"
+#include "Database/DB.h";
 
 bool PlayerKillsEnabled, DinoKillsEnabled, DisplayInChatbox, DisplaySameTribeKills, DisplayDistance, UseDiscordWebhook;
 int DisplayType;
